@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book Your Journey | Oumama Tours</title>
+<meta name="description" content="Request a private transportation quote with Oumama Tours. Tell us about your trip and we'll help you arrange the right vehicle across Morocco." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: { charcoal: '#171717', beige: '#F3EBDD', sand: '#D8C3A5', gold: '#C8A45D' },
+      fontFamily: { display: ['Playfair Display', 'serif'], sans: ['Inter', 'sans-serif'] },
+    }},
+  };
+</script>
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased">
+
+<!-- HEADER -->
+<header id="site-header" class="fixed top-0 left-0 w-full z-50 scrolled">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between py-5">
+    <a href="index.html" aria-label="Oumama Tours home">
+      <img src="images/oumama-tours-logo-v2.svg" alt="Oumama Tours" class="site-logo site-logo-header">
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-white/90 text-sm tracking-wide">
+      <a href="index.html#home" class="hover:text-gold transition-colors">Home</a>
+      <a href="index.html#about" class="hover:text-gold transition-colors">About Us</a>
+      <a href="index.html#services" class="hover:text-gold transition-colors">Services</a>
+      <a href="index.html#destinations" class="hover:text-gold transition-colors">Destinations</a>
+      <a href="index.html#fleet" class="hover:text-gold transition-colors">Fleet</a>
+      <a href="index.html#tours" class="hover:text-gold transition-colors">Tours</a>
+      <a href="index.html#gallery" class="hover:text-gold transition-colors">Gallery</a>
+      <a href="contact.html" class="hover:text-gold transition-colors">Contact</a>
+    </nav>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="https://wa.me/212657235089" target="_blank" rel="noopener" class="btn-outline text-sm px-4 py-2 rounded-full flex items-center gap-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Us
+      </a>
+      <a href="booking.html" class="btn-gold text-sm font-medium px-5 py-2.5 rounded-full">Book Your Ride</a>
+    </div>
+    <button id="menu-toggle" class="lg:hidden text-white" aria-label="Toggle menu">
+      <i data-lucide="menu" id="icon-open" class="w-7 h-7"></i>
+      <i data-lucide="x" id="icon-close" class="w-7 h-7 hidden"></i>
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 opacity-0 bg-charcoal/97 backdrop-blur">
+    <div class="flex flex-col gap-5 px-6 py-6 text-white text-base">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#destinations">Destinations</a>
+      <a href="index.html#fleet">Fleet</a>
+      <a href="index.html#tours">Tours</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="photo-placeholder pt-40 pb-20 relative">
+  <div class="absolute inset-0 bg-charcoal/55"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+    <p class="text-gold uppercase tracking-[0.25em] text-xs mb-4">Booking</p>
+    <h1 class="font-display text-white text-4xl md:text-5xl mb-4">Book Your Journey</h1>
+    <p class="text-white/75 max-w-xl mx-auto">Tell us about your trip and we'll help you arrange the right transportation.</p>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="max-w-4xl mx-auto px-6 lg:px-10 py-20">
+  <form id="booking-form" class="bg-white border border-sand/60 rounded-2xl shadow-xl shadow-charcoal/5 p-7 md:p-10 space-y-10">
+
+    <div>
+      <h2 class="font-display text-xl mb-6 flex items-center gap-2"><i data-lucide="user" class="w-5 h-5 text-gold"></i>Personal Information</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Full Name</label>
+          <input required type="text" name="full_name" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none" />
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Email</label>
+          <input required type="email" name="email" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none" />
+        </div>
+        <div class="flex flex-col gap-1.5 md:col-span-2">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Phone / WhatsApp</label>
+          <input required type="tel" name="phone" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none" />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="font-display text-xl mb-6 flex items-center gap-2"><i data-lucide="map" class="w-5 h-5 text-gold"></i>Journey Details</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Pick-up Location</label>
+          <input required type="text" name="pickup_location" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none" />
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Destination</label>
+          <input required type="text" name="destination" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none" />
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Travel Date</label>
+          <input required type="date" name="travel_date" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none text-charcoal/80" />
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Pick-up Time</label>
+          <input required type="time" name="pickup_time" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none text-charcoal/80" />
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Number of Passengers</label>
+          <input required type="number" name="passengers" min="1" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none" />
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Vehicle Type</label>
+          <select required name="vehicle_type" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none text-charcoal/80">
+            <option value="Premium Sedan">Premium Sedan</option>
+            <option>Luxury SUV</option>
+            <option>Minivan</option>
+            <option>Tourist Minibus</option>
+            <option>Not sure — advise me</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="font-display text-xl mb-6 flex items-center gap-2"><i data-lucide="clipboard-list" class="w-5 h-5 text-gold"></i>Additional Information</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Return Trip</label>
+          <select name="return_trip" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none text-charcoal/80">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+          </select>
+        </div>
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Flight Number (optional)</label>
+          <input type="text" name="flight_number" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none" />
+        </div>
+        <div class="flex flex-col gap-1.5 md:col-span-2">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Hotel / Accommodation (optional)</label>
+          <input type="text" name="hotel" class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none" />
+        </div>
+        <div class="flex flex-col gap-1.5 md:col-span-2">
+          <label class="text-xs uppercase tracking-wide text-charcoal/60">Additional Requests</label>
+          <textarea rows="4" name="additional_requests" placeholder="Tell us anything else about your journey..." class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none resize-none"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-gold w-full py-4 rounded-full font-medium text-sm">Request a Quote</button>
+  </form>
+
+  <div id="booking-confirmation" class="hidden bg-white border border-sand/60 rounded-2xl p-10 text-center">
+    <i data-lucide="check-circle-2" class="w-12 h-12 text-gold mx-auto mb-5"></i>
+    <h2 class="font-display text-2xl mb-3">Thank you!</h2>
+    <p class="text-charcoal/70 max-w-md mx-auto">Your request has been received. Oumama Tours will contact you shortly.</p>
+    <a href="index.html" class="btn-gold inline-block mt-7 px-7 py-3 rounded-full font-medium">Back to Home</a>
+  </div>
+</section>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/212657235089" target="_blank" rel="noopener" class="group fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-transform" aria-label="Chat with us on WhatsApp">
+  <i data-lucide="message-circle" class="w-7 h-7"></i>
+  <span class="absolute right-16 whitespace-nowrap bg-charcoal text-white text-xs px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">Chat with us on WhatsApp</span>
+</a>
+
+<!-- FOOTER -->
+<footer class="bg-charcoal border-t border-white/10 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <a href="index.html" class="footer-logo mb-3" aria-label="Oumama Tours home">
+        <img src="images/oumama-tours-logo-v2.svg" alt="Oumama Tours" class="site-logo site-logo-footer">
+      </a>
+      <p class="text-white/55 text-sm">Discover Morocco. Travel in Comfort.</p>
+      <div class="flex gap-3 mt-5 text-white/60">
+        <a href="#" aria-label="Instagram" class="hover:text-gold"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="Facebook" class="hover:text-gold"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="TikTok" class="hover:text-gold"><i data-lucide="music-2" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-gold"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+      </div>
+    </div>
+    <div>
+      <p class="text-gold text-xs uppercase tracking-wide mb-4">Explore</p>
+      <ul class="space-y-2.5 text-sm text-white/60">
+        <li><a href="index.html#home" class="hover:text-white">Home</a></li>
+        <li><a href="index.html#about" class="hover:text-white">About Us</a></li>
+        <li><a href="index.html#services" class="hover:text-white">Services</a></li>
+        <li><a href="index.html#destinations" class="hover:text-white">Destinations</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-gold text-xs uppercase tracking-wide mb-4">Company</p>
+      <ul class="space-y-2.5 text-sm text-white/60">
+        <li><a href="index.html#tours" class="hover:text-white">Tours</a></li>
+        <li><a href="index.html#fleet" class="hover:text-white">Fleet</a></li>
+        <li><a href="index.html#gallery" class="hover:text-white">Gallery</a></li>
+        <li><a href="booking.html" class="hover:text-white">Booking</a></li>
+        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-gold text-xs uppercase tracking-wide mb-4">Contact</p>
+      <ul class="space-y-2.5 text-sm text-white/60">
+        <li>0657235089</li>
+        <li>contact@oumamatours.com</li>
+        <li>0657235089</li>
+        <li>Morocco</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45">
+    <p>&copy; 2026 Oumama Tours. All rights reserved.</p>
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-white">Privacy Policy</a>
+      <a href="#" class="hover:text-white">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const bookingForm = document.getElementById("booking-form");
+  const confirmation = document.getElementById("booking-confirmation");
+
+  if (!bookingForm) return;
+
+  bookingForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const submitButton = bookingForm.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+
+    const formData = new FormData(bookingForm);
+    const data = Object.fromEntries(formData.entries());
+
+    data.passengers = Number(data.passengers);
+    data.return_trip = data.return_trip === "true";
+
+    try {
+      const response = await fetch("/api/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || "Unable to submit booking.");
+      }
+
+      bookingForm.classList.add("hidden");
+      confirmation.classList.remove("hidden");
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      console.log("Booking created:", result);
+
+    } catch (error) {
+      console.error("Booking error:", error);
+      alert("Sorry, your booking could not be submitted. Please try again.");
+      submitButton.disabled = false;
+      submitButton.textContent = originalText;
+    }
+  });
+});
+</script>
+</body>
+</html>

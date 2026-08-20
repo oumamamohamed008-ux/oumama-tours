@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oumama Tours | Tourist Transportation & Private Tours in Morocco</title>
+<meta name="description" content="Oumama Tours offers private transportation, airport transfers, tourist excursions and customized tours across Morocco. Travel comfortably with professional service and Moroccan hospitality." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          charcoal: '#171717',
+          beige: '#F3EBDD',
+          sand: '#D8C3A5',
+          gold: '#C8A45D',
+        },
+        fontFamily: {
+          display: ['Playfair Display', 'serif'],
+          sans: ['Inter', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="antialiased">
+
+<!-- HEADER -->
+<header id="site-header" class="fixed top-0 left-0 w-full z-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between py-5">
+    <a href="index.html" aria-label="Oumama Tours home">
+      <img src="images/oumama-tours-logo-v2.svg" alt="Oumama Tours" class="site-logo site-logo-header">
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-8 text-white/90 text-sm tracking-wide">
+      <a href="#home" class="hover:text-gold transition-colors">Home</a>
+      <a href="#about" class="hover:text-gold transition-colors">About Us</a>
+      <a href="#services" class="hover:text-gold transition-colors">Services</a>
+      <a href="#destinations" class="hover:text-gold transition-colors">Destinations</a>
+      <a href="#fleet" class="hover:text-gold transition-colors">Fleet</a>
+      <a href="#tours" class="hover:text-gold transition-colors">Tours</a>
+      <a href="#gallery" class="hover:text-gold transition-colors">Gallery</a>
+      <a href="contact.html" class="hover:text-gold transition-colors">Contact</a>
+    </nav>
+
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="https://wa.me/212657235089" target="_blank" rel="noopener" class="btn-outline text-sm px-4 py-2 rounded-full flex items-center gap-2">
+        <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Us
+      </a>
+      <a href="booking.html" class="btn-gold text-sm font-medium px-5 py-2.5 rounded-full">Book Your Ride</a>
+    </div>
+
+    <button id="menu-toggle" class="lg:hidden text-white" aria-label="Toggle menu">
+      <i data-lucide="menu" id="icon-open" class="w-7 h-7"></i>
+      <i data-lucide="x" id="icon-close" class="w-7 h-7 hidden"></i>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 opacity-0 bg-charcoal/97 backdrop-blur">
+    <div class="flex flex-col gap-5 px-6 py-6 text-white text-base">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#tours">Tours</a>
+      <a href="#gallery">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://wa.me/212657235089" target="_blank" rel="noopener" class="text-gold">WhatsApp Us</a>
+      <a href="booking.html" class="btn-gold text-center px-5 py-2.5 rounded-full">Book Your Ride</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-screen flex items-end photo-placeholder">
+  <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/30"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pb-28 pt-40 w-full">
+    <p class="hero-anim-1 text-gold tracking-[0.3em] text-xs md:text-sm uppercase mb-5">Private Transportation & Tailor-Made Tours Across Morocco</p>
+    <h1 class="hero-anim-2 font-display text-white text-4xl sm:text-5xl md:text-7xl leading-[1.1] max-w-3xl">Discover Morocco.<br>Travel in Comfort.</h1>
+    <p class="hero-anim-3 text-beige/85 text-base md:text-lg max-w-xl mt-6">Private transportation, airport transfers and unforgettable journeys across Morocco.</p>
+    <div class="hero-anim-4 flex flex-wrap gap-4 mt-9">
+      <a href="booking.html" class="btn-gold px-7 py-3.5 rounded-full font-medium">Book Your Ride</a>
+      <a href="#tours" class="btn-outline px-7 py-3.5 rounded-full font-medium">Explore Our Tours</a>
+    </div>
+    <div class="hero-anim-4 flex flex-wrap items-center gap-x-3 gap-y-2 mt-10 text-white/70 text-xs md:text-sm tracking-wide uppercase">
+      <span>Professional Drivers</span><span class="text-gold">•</span>
+      <span>Comfortable Vehicles</span><span class="text-gold">•</span>
+      <span>Personalized Service</span>
+    </div>
+  </div>
+  <div class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 z-10">
+    <i data-lucide="chevron-down" class="w-6 h-6"></i>
+  </div>
+</section>
+
+<!-- QUICK BOOKING BAR -->
+<section class="relative z-20 -mt-12 md:-mt-14 px-6">
+  <form id="quote-form" class="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl shadow-charcoal/20 border border-sand/60 p-5 md:p-6 grid grid-cols-1 md:grid-cols-6 gap-4">
+    <div class="md:col-span-1 flex flex-col gap-1.5">
+      <label class="text-[11px] uppercase tracking-wide text-charcoal/60">Pick-up</label>
+      <input type="text" placeholder="e.g. Marrakech Airport" class="border border-sand rounded-lg px-3 py-2.5 text-sm focus:border-gold outline-none" />
+    </div>
+    <div class="md:col-span-1 flex flex-col gap-1.5">
+      <label class="text-[11px] uppercase tracking-wide text-charcoal/60">Destination</label>
+      <input type="text" placeholder="e.g. Riad, Medina" class="border border-sand rounded-lg px-3 py-2.5 text-sm focus:border-gold outline-none" />
+    </div>
+    <div class="md:col-span-1 flex flex-col gap-1.5">
+      <label class="text-[11px] uppercase tracking-wide text-charcoal/60">Date</label>
+      <input type="date" class="border border-sand rounded-lg px-3 py-2.5 text-sm focus:border-gold outline-none text-charcoal/80" />
+    </div>
+    <div class="md:col-span-1 flex flex-col gap-1.5">
+      <label class="text-[11px] uppercase tracking-wide text-charcoal/60">Time</label>
+      <input type="time" class="border border-sand rounded-lg px-3 py-2.5 text-sm focus:border-gold outline-none text-charcoal/80" />
+    </div>
+    <div class="md:col-span-1 flex flex-col gap-1.5">
+      <label class="text-[11px] uppercase tracking-wide text-charcoal/60">Passengers</label>
+      <select class="border border-sand rounded-lg px-3 py-2.5 text-sm focus:border-gold outline-none text-charcoal/80">
+        <option>1 passenger</option>
+        <option>2 passengers</option>
+        <option>3–4 passengers</option>
+        <option>5–8 passengers</option>
+        <option>9+ passengers</option>
+      </select>
+    </div>
+    <div class="md:col-span-1 flex items-end">
+      <button type="submit" class="btn-gold w-full rounded-lg py-2.5 font-medium text-sm">Get a Quote</button>
+    </div>
+  </form>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="reveal max-w-7xl mx-auto px-6 lg:px-10 pt-28 pb-8 text-center">
+  <p class="text-gold uppercase tracking-[0.25em] text-xs mb-3">Travel With Confidence</p>
+  <h2 class="font-display text-3xl md:text-4xl">Your comfort, safety and experience are our priority.</h2>
+</section>
+
+<section class="max-w-7xl mx-auto px-6 lg:px-10 pb-24 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div class="reveal gold-card bg-white border border-sand/60 rounded-2xl p-7">
+    <i data-lucide="user-check" class="w-8 h-8 text-gold mb-4"></i>
+    <h3 class="font-display text-lg mb-2">Professional Drivers</h3>
+    <p class="text-sm text-charcoal/70 leading-relaxed">Experienced, professional and friendly drivers dedicated to providing a smooth journey.</p>
+  </div>
+  <div class="reveal gold-card bg-white border border-sand/60 rounded-2xl p-7">
+    <i data-lucide="shield-check" class="w-8 h-8 text-gold mb-4"></i>
+    <h3 class="font-display text-lg mb-2">Comfort & Safety</h3>
+    <p class="text-sm text-charcoal/70 leading-relaxed">Travel in clean, comfortable and well-maintained vehicles.</p>
+  </div>
+  <div class="reveal gold-card bg-white border border-sand/60 rounded-2xl p-7">
+    <i data-lucide="sliders-horizontal" class="w-8 h-8 text-gold mb-4"></i>
+    <h3 class="font-display text-lg mb-2">Personalized Service</h3>
+    <p class="text-sm text-charcoal/70 leading-relaxed">Every journey can be adapted to your schedule and travel needs.</p>
+  </div>
+  <div class="reveal gold-card bg-white border border-sand/60 rounded-2xl p-7">
+    <i data-lucide="map-pinned" class="w-8 h-8 text-gold mb-4"></i>
+    <h3 class="font-display text-lg mb-2">Available Across Morocco</h3>
+    <p class="text-sm text-charcoal/70 leading-relaxed">Explore Morocco with reliable transportation in major cities and tourist destinations.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<!-- SERVICES -->
+<section id="services" class="bg-charcoal py-24">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="reveal text-center mb-14">
+      <p class="text-gold uppercase tracking-[0.25em] text-xs mb-3">Our Services</p>
+      <h2 class="font-display text-white text-3xl md:text-4xl">Reliable transportation for every type of journey.</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+      <!-- service card template -->
+      <div class="reveal gold-card bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden">
+        <div class="zoom-wrap h-44">
+  <img
+    src="images/Airport Transfer.jpg"
+    alt="Airport Transfers"
+    class="zoom-img w-full h-full object-cover"
+  />
+</div>
+        <div class="p-6">
+          <i data-lucide="plane" class="w-6 h-6 text-gold mb-3"></i>
+          <h3 class="font-display text-white text-lg mb-2">Airport Transfers</h3>
+          <p class="text-sm text-white/65 leading-relaxed mb-4">Comfortable private transfers from airports to hotels, homes and destinations.</p>
+          <a href="booking.html" class="text-gold text-sm font-medium inline-flex items-center gap-1">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div class="reveal gold-card bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden">
+       <div class="zoom-wrap h-44">
+  <img
+    src="images/Private Transportation.jpg"
+    alt="Private Transportation"
+    class="zoom-img w-full h-full object-cover"
+  />
+</div>
+
+        <div class="p-6">
+          <i data-lucide="car-front" class="w-6 h-6 text-gold mb-3"></i>
+          <h3 class="font-display text-white text-lg mb-2">Private Transportation</h3>
+          <p class="text-sm text-white/65 leading-relaxed mb-4">Enjoy flexible and private transportation throughout Morocco.</p>
+          <a href="booking.html" class="text-gold text-sm font-medium inline-flex items-center gap-1">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div class="reveal gold-card bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden">
+       <div class="zoom-wrap h-44">
+  <img
+    src="images/City Transfers.jpg"
+    alt="City Transfers"
+    class="zoom-img w-full h-full object-cover"
+  />
+</div>
+        <div class="p-6">
+          <i data-lucide="building-2" class="w-6 h-6 text-gold mb-3"></i>
+          <h3 class="font-display text-white text-lg mb-2">City Transfers</h3>
+          <p class="text-sm text-white/65 leading-relaxed mb-4">Travel comfortably between Morocco's major cities.</p>
+          <a href="booking.html" class="text-gold text-sm font-medium inline-flex items-center gap-1">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div class="reveal gold-card bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden">
+        <div class="zoom-wrap h-44">
+  <img
+    src="images/Tourist Excursion.jpg"
+    alt="Tourist Excursions"
+    class="zoom-img w-full h-full object-cover"
+  />
+</div>
+        <div class="p-6">
+          <i data-lucide="compass" class="w-6 h-6 text-gold mb-3"></i>
+          <h3 class="font-display text-white text-lg mb-2">Tourist Excursions</h3>
+          <p class="text-sm text-white/65 leading-relaxed mb-4">Discover Morocco's most beautiful destinations with professional transportation.</p>
+          <a href="booking.html" class="text-gold text-sm font-medium inline-flex items-center gap-1">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div class="reveal gold-card bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden">
+       <div class="zoom-wrap h-44">
+  <img
+    src="images/Business Transportation.jpg"
+    alt="Business Transportation"
+    class="zoom-img w-full h-full object-cover"
+  />
+</div>
+        <div class="p-6">
+          <i data-lucide="briefcase" class="w-6 h-6 text-gold mb-3"></i>
+          <h3 class="font-display text-white text-lg mb-2">Business Transportation</h3>
+          <p class="text-sm text-white/65 leading-relaxed mb-4">Reliable transportation for meetings, conferences and corporate travel.</p>
+          <a href="booking.html" class="text-gold text-sm font-medium inline-flex items-center gap-1">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+      <div class="reveal gold-card bg-white/[0.04] border border-white/10 rounded-2xl overflow-hidden">
+        <div class="zoom-wrap h-44">
+  <img
+    src="images/Customized Tour.jpg"
+    alt="Customized Tour"
+    class="zoom-img w-full h-full object-cover"
+  />
+</div>
+        <div class="p-6">
+          <i data-lucide="route" class="w-6 h-6 text-gold mb-3"></i>
+          <h3 class="font-display text-white text-lg mb-2">Customized Tours</h3>
+          <p class="text-sm text-white/65 leading-relaxed mb-4">Create a personalized Moroccan journey according to your schedule and interests.</p>
+          <a href="booking.html" class="text-gold text-sm font-medium inline-flex items-center gap-1">Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="destinations" class="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+
+  <div class="reveal text-center mb-14">
+    <p class="text-gold uppercase tracking-[0.25em] text-xs mb-3">
+      Explore Morocco
+    </p>
+
+    <h2 class="font-display text-3xl md:text-4xl">
+      From vibrant cities to breathtaking landscapes, discover Morocco your way.
+    </h2>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Marrakech -->
+    <div class="reveal zoom-wrap gold-card rounded-2xl overflow-hidden border border-sand/50 h-64 relative">
+      <img src="images/marrakech.jpg"
+           alt="Marrakech"
+           class="absolute inset-0 w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <h3 class="font-display text-xl text-gold mb-1">Marrakech</h3>
+        <p class="text-sm">
+          The Red City, famous for its souks, palaces, gardens and vibrant atmosphere.
+        </p>
+      </div>
+    </div>
+
+    <!-- Casablanca -->
+    <div class="reveal zoom-wrap gold-card rounded-2xl overflow-hidden border border-sand/50 h-64 relative">
+      <img src="images/casablanca.jpg"
+           alt="Casablanca"
+           class="absolute inset-0 w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <h3 class="font-display text-xl text-gold mb-1">Casablanca</h3>
+        <p class="text-sm">
+          Morocco's modern economic capital, home to the Hassan II Mosque.
+        </p>
+      </div>
+    </div>
+
+    <!-- Rabat -->
+    <div class="reveal zoom-wrap gold-card rounded-2xl overflow-hidden border border-sand/50 h-64 relative">
+      <img src="images/rabat.jpg"
+           alt="Rabat"
+           class="absolute inset-0 w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <h3 class="font-display text-xl text-gold mb-1">Rabat</h3>
+        <p class="text-sm">
+          A coastal capital combining history, culture and modern life.
+        </p>
+      </div>
+    </div>
+
+    <!-- Fes -->
+    <div class="reveal zoom-wrap gold-card rounded-2xl overflow-hidden border border-sand/50 h-64 relative">
+      <img src="images/fes.jpg"
+           alt="Fes"
+           class="absolute inset-0 w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <h3 class="font-display text-xl text-gold mb-1">Fes</h3>
+        <p class="text-sm">
+          Morocco's spiritual and cultural heart, and its historic medina.
+        </p>
+      </div>
+    </div>
+
+    <!-- Chefchaouen -->
+    <div class="reveal zoom-wrap gold-card rounded-2xl overflow-hidden border border-sand/50 h-64 relative">
+      <img src="images/chefchaouen.jpg"
+           alt="Chefchaouen"
+           class="absolute inset-0 w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <h3 class="font-display text-xl text-gold mb-1">Chefchaouen</h3>
+        <p class="text-sm">
+          The famous blue streets of Morocco's Rif Mountains.
+        </p>
+      </div>
+    </div>
+
+    <!-- Agadir -->
+    <div class="reveal zoom-wrap gold-card rounded-2xl overflow-hidden border border-sand/50 h-64 relative">
+      <img src="images/agadir.jpg"
+           alt="Agadir"
+           class="absolute inset-0 w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <h3 class="font-display text-xl text-gold mb-1">Agadir</h3>
+        <p class="text-sm">
+          Beautiful beaches along Morocco's Atlantic coast.
+        </p>
+      </div>
+    </div>
+
+    <!-- Essaouira -->
+    <div class="reveal zoom-wrap gold-card rounded-2xl overflow-hidden border border-sand/50 h-64 relative">
+      <img src="images/essaouira.jpg"
+           alt="Essaouira"
+           class="absolute inset-0 w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <h3 class="font-display text-xl text-gold mb-1">Essaouira</h3>
+        <p class="text-sm">
+          A charming coastal city known for its medina and ocean views.
+        </p>
+      </div>
+    </div>
+
+    <!-- Merzouga -->
+    <div class="reveal zoom-wrap gold-card rounded-2xl overflow-hidden border border-sand/50 h-64 relative">
+      <img src="images/merzouga.jpg"
+           alt="Merzouga"
+           class="absolute inset-0 w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <h3 class="font-display text-xl text-gold mb-1">Merzouga</h3>
+        <p class="text-sm">
+          The Sahara Desert, golden dunes and unforgettable landscapes.
+        </p>
+      </div>
+    </div>
+
+    <!-- Ouarzazate -->
+    <div class="reveal zoom-wrap gold-card rounded-2xl overflow-hidden border border-sand/50 h-64 relative">
+      <img src="images/ouarzazate.jpg"
+           alt="Ouarzazate"
+           class="absolute inset-0 w-full h-full object-cover">
+
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+
+      <div class="absolute bottom-0 left-0 right-0 p-5 text-white">
+        <h3 class="font-display text-xl text-gold mb-1">Ouarzazate</h3>
+        <p class="text-sm">
+          The gateway to the Sahara and Morocco's cinematic landscapes.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="reveal text-center mt-12">
+    <a href="#destinations"
+       class="btn-gold inline-block px-7 py-3 rounded-full font-medium">
+      Discover All Destinations
+    </a>
+  </div>
+
+</section>
+
+<!-- FEATURED TOURS -->
+<section id="tours" class="bg-white py-24 border-y border-sand/40">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <div class="reveal text-center mb-14">
+      <p class="text-gold uppercase tracking-[0.25em] text-xs mb-3">
+        Featured Tours
+      </p>
+
+      <h2 class="font-display text-3xl md:text-4xl">
+        Discover Our Most Popular Tours
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+      <!-- TOUR 1 -->
+      <div class="reveal gold-card border border-sand/60 rounded-2xl overflow-hidden">
+
+        <div class="h-40 relative overflow-hidden">
+          <img
+            src="images/tour-merzouga.jpg"
+            alt="Marrakech to Merzouga"
+            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          >
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+          <span class="absolute bottom-3 left-4 text-white text-sm font-medium">
+            Atlas Mountains — Aït Ben Haddou
+          </span>
+        </div>
+
+        <div class="p-6">
+          <h3 class="font-display text-lg mb-1">
+            Marrakech to Merzouga
+          </h3>
+
+          <p class="text-xs text-gold uppercase tracking-wide mb-3">
+            3 Days · From Marrakech
+          </p>
+
+          <p class="text-sm text-charcoal/70 mb-4">
+            Experience the Atlas Mountains, Aït Ben Haddou and the Sahara Desert.
+          </p>
+
+          <a
+            href="booking.html"
+            class="text-charcoal text-sm font-medium border-b border-gold inline-block"
+          >
+            View Tour
+          </a>
+        </div>
+      </div>
+
+
+      <!-- TOUR 2 -->
+      <div class="reveal gold-card border border-sand/60 rounded-2xl overflow-hidden">
+
+        <div class="h-40 relative overflow-hidden">
+          <img
+            src="images/tour-essaouira.jpg"
+            alt="Marrakech to Essaouira"
+            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          >
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+          <span class="absolute bottom-3 left-4 text-white text-sm font-medium">
+            Atlantic Coast Road
+          </span>
+        </div>
+
+        <div class="p-6">
+          <h3 class="font-display text-lg mb-1">
+            Marrakech to Essaouira
+          </h3>
+
+          <p class="text-xs text-gold uppercase tracking-wide mb-3">
+            Full Day · From Marrakech
+          </p>
+
+          <p class="text-sm text-charcoal/70 mb-4">
+            Enjoy a relaxing journey to Morocco's beautiful Atlantic coast.
+          </p>
+
+          <a
+            href="booking.html"
+            class="text-charcoal text-sm font-medium border-b border-gold inline-block"
+          >
+            View Tour
+          </a>
+        </div>
+      </div>
+
+
+      <!-- TOUR 3 -->
+      <div class="reveal gold-card border border-sand/60 rounded-2xl overflow-hidden">
+
+        <div class="h-40 relative overflow-hidden">
+          <img
+            src="images/tour-fes.jpg"
+            alt="Marrakech to Fes"
+            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          >
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+          <span class="absolute bottom-3 left-4 text-white text-sm font-medium">
+            Middle Atlas Landscapes
+          </span>
+        </div>
+
+        <div class="p-6">
+          <h3 class="font-display text-lg mb-1">
+            Marrakech to Fes
+          </h3>
+
+          <p class="text-xs text-gold uppercase tracking-wide mb-3">
+            2 Days · From Marrakech
+          </p>
+
+          <p class="text-sm text-charcoal/70 mb-4">
+            Travel through spectacular landscapes and discover Morocco's historic cities.
+          </p>
+
+          <a
+            href="booking.html"
+            class="text-charcoal text-sm font-medium border-b border-gold inline-block"
+          >
+            View Tour
+          </a>
+        </div>
+      </div>
+
+
+      <!-- TOUR 4 -->
+      <div class="reveal gold-card border border-sand/60 rounded-2xl overflow-hidden">
+
+        <div class="h-40 relative overflow-hidden">
+          <img
+            src="images/tour-casablanca-rabat.jpg"
+            alt="Casablanca and Rabat"
+            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          >
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+          <span class="absolute bottom-3 left-4 text-white text-sm font-medium">
+            Hassan II Mosque
+          </span>
+        </div>
+
+        <div class="p-6">
+          <h3 class="font-display text-lg mb-1">
+            Casablanca & Rabat
+          </h3>
+
+          <p class="text-xs text-gold uppercase tracking-wide mb-3">
+            Full Day · From Casablanca
+          </p>
+
+          <p class="text-sm text-charcoal/70 mb-4">
+            Discover Morocco's modern capital and cultural heritage.
+          </p>
+
+          <a
+            href="booking.html"
+            class="text-charcoal text-sm font-medium border-b border-gold inline-block"
+          >
+            View Tour
+          </a>
+        </div>
+      </div>
+
+
+      <!-- TOUR 5 -->
+      <div class="reveal gold-card border border-sand/60 rounded-2xl overflow-hidden">
+
+        <div class="h-40 relative overflow-hidden">
+          <img
+            src="images/tour-chefchaouen.jpg"
+            alt="Chefchaouen and Fes"
+            class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          >
+
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+
+          <span class="absolute bottom-3 left-4 text-white text-sm font-medium">
+            Blue Streets of Chefchaouen
+          </span>
+        </div>
+
+        <div class="p-6">
+          <h3 class="font-display text-lg mb-1">
+            Chefchaouen & Fes
+          </h3>
+
+          <p class="text-xs text-gold uppercase tracking-wide mb-3">
+            2 Days · From Fes
+          </p>
+
+          <p class="text-sm text-charcoal/70 mb-4">
+            Explore the Blue Pearl and the historic city of Fes.
+          </p>
+
+          <a
+            href="booking.html"
+            class="text-charcoal text-sm font-medium border-b border-gold inline-block"
+          >
+            View Tour
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OUR FLEET -->
+<section id="fleet" class="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+
+  <div class="reveal text-center mb-14">
+    <p class="text-gold uppercase tracking-[0.25em] text-xs mb-3">
+      Our Fleet
+    </p>
+
+    <h2 class="font-display text-3xl md:text-4xl">
+      Comfortable vehicles for every journey.
+    </h2>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+    <!-- PREMIUM SEDAN -->
+    <div class="reveal gold-card border border-sand/60 rounded-2xl overflow-hidden bg-white">
+
+      <div class="h-36 relative overflow-hidden">
+        <img
+          src="images/premium-sedan.jpg"
+          alt="Premium Sedan"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+        <span class="absolute bottom-3 left-4 text-white text-sm font-medium">
+          Premium Sedan
+        </span>
+      </div>
+
+      <div class="p-5">
+        <h3 class="font-display text-base mb-3">
+          Premium Sedan
+        </h3>
+
+        <p class="text-xs text-charcoal/60 mb-3">
+          Perfect for individuals and couples.
+        </p>
+
+        <ul class="text-xs text-charcoal/70 space-y-1.5">
+          <li class="flex items-center gap-2">
+            <i data-lucide="users" class="w-3.5 h-3.5 text-gold"></i>
+            1–3 passengers
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="luggage" class="w-3.5 h-3.5 text-gold"></i>
+            2 large bags
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="snowflake" class="w-3.5 h-3.5 text-gold"></i>
+            Air conditioning
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-gold"></i>
+            Professional driver
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- LUXURY SUV -->
+    <div class="reveal gold-card border border-sand/60 rounded-2xl overflow-hidden bg-white">
+
+      <div class="h-36 relative overflow-hidden">
+        <img
+          src="images/luxury-suv.jpg"
+          alt="Luxury SUV"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+        <span class="absolute bottom-3 left-4 text-white text-sm font-medium">
+          Luxury SUV
+        </span>
+      </div>
+
+      <div class="p-5">
+        <h3 class="font-display text-base mb-3">
+          Luxury SUV
+        </h3>
+
+        <p class="text-xs text-charcoal/60 mb-3">
+          Ideal for families and private groups.
+        </p>
+
+        <ul class="text-xs text-charcoal/70 space-y-1.5">
+          <li class="flex items-center gap-2">
+            <i data-lucide="users" class="w-3.5 h-3.5 text-gold"></i>
+            1–4 passengers
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="luggage" class="w-3.5 h-3.5 text-gold"></i>
+            3 large bags
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="snowflake" class="w-3.5 h-3.5 text-gold"></i>
+            Air conditioning
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-gold"></i>
+            Professional driver
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- MINIVAN -->
+    <div class="reveal gold-card border border-sand/60 rounded-2xl overflow-hidden bg-white">
+
+      <div class="h-36 relative overflow-hidden">
+        <img
+          src="images/minivan.jpg"
+          alt="Minivan"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+        <span class="absolute bottom-3 left-4 text-white text-sm font-medium">
+          Minivan
+        </span>
+      </div>
+
+      <div class="p-5">
+        <h3 class="font-display text-base mb-3">
+          Minivan
+        </h3>
+
+        <p class="text-xs text-charcoal/60 mb-3">
+          Comfortable transportation for small groups.
+        </p>
+
+        <ul class="text-xs text-charcoal/70 space-y-1.5">
+          <li class="flex items-center gap-2">
+            <i data-lucide="users" class="w-3.5 h-3.5 text-gold"></i>
+            1–7 passengers
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="luggage" class="w-3.5 h-3.5 text-gold"></i>
+            5 large bags
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="snowflake" class="w-3.5 h-3.5 text-gold"></i>
+            Air conditioning
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-gold"></i>
+            Professional driver
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- TOURIST MINIBUS -->
+    <div class="reveal gold-card border border-sand/60 rounded-2xl overflow-hidden bg-white">
+
+      <div class="h-36 relative overflow-hidden">
+        <img
+          src="images/tourist-minibus.jpg"
+          alt="Tourist Minibus"
+          class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+
+        <span class="absolute bottom-3 left-4 text-white text-sm font-medium">
+          Tourist Minibus
+        </span>
+      </div>
+
+      <div class="p-5">
+        <h3 class="font-display text-base mb-3">
+          Tourist Minibus
+        </h3>
+
+        <p class="text-xs text-charcoal/60 mb-3">
+          Ideal for larger groups and organized excursions.
+        </p>
+
+        <ul class="text-xs text-charcoal/70 space-y-1.5">
+          <li class="flex items-center gap-2">
+            <i data-lucide="users" class="w-3.5 h-3.5 text-gold"></i>
+            8–16 passengers
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="luggage" class="w-3.5 h-3.5 text-gold"></i>
+            Group luggage
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="snowflake" class="w-3.5 h-3.5 text-gold"></i>
+            Air conditioning
+          </li>
+
+          <li class="flex items-center gap-2">
+            <i data-lucide="user-check" class="w-3.5 h-3.5 text-gold"></i>
+            Professional driver
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="reveal text-center mt-12">
+    <a
+      href="booking.html"
+      class="btn-gold inline-block px-7 py-3 rounded-full font-medium"
+    >
+      Choose Your Vehicle
+    </a>
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+<!-- ABOUT US -->
+<section id="about" class="bg-charcoal py-24">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-14 items-center">
+
+    <!-- IMAGE -->
+    <div class="reveal h-80 lg:h-[26rem] rounded-2xl overflow-hidden order-2 lg:order-1 relative">
+
+      <img
+        src="images/professional-chauffeur.jpg"
+        alt="Professional Chauffeur - Oumama Tours"
+        class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+      >
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+
+      <!-- Image label -->
+      <div class="absolute bottom-5 left-5">
+        <p class="text-white font-display text-lg">
+          Professional Chauffeur
+        </p>
+        <p class="text-white/70 text-xs mt-1">
+          Comfort · Safety · Reliability
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- TEXT -->
+    <div class="reveal order-1 lg:order-2">
+
+      <p class="text-gold uppercase tracking-[0.25em] text-xs mb-3">
+        About Us
+      </p>
+
+      <h2 class="font-display text-white text-3xl md:text-4xl mb-6">
+        Your Journey, Our Commitment
+      </h2>
+
+      <p class="text-white/70 leading-relaxed mb-4">
+        Oumama Tours is a Moroccan tourist transportation company dedicated
+        to providing comfortable, reliable and personalized transportation
+        services across Morocco.
+      </p>
+
+      <p class="text-white/70 leading-relaxed mb-8">
+        Our goal is to make every journey simple, safe and enjoyable, whether
+        you are arriving at the airport, exploring Morocco's historic cities,
+        traveling between destinations or planning a private excursion.
+      </p>
+
+      <ul class="grid grid-cols-2 gap-3 mb-9">
+
+        <li class="flex items-center gap-2 text-white/80 text-sm">
+          <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+          Professional service
+        </li>
+
+        <li class="flex items-center gap-2 text-white/80 text-sm">
+          <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+          Customer satisfaction
+        </li>
+
+        <li class="flex items-center gap-2 text-white/80 text-sm">
+          <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+          Comfortable transportation
+        </li>
+
+        <li class="flex items-center gap-2 text-white/80 text-sm">
+          <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+          Flexible itineraries
+        </li>
+
+        <li class="flex items-center gap-2 text-white/80 text-sm col-span-2">
+          <i data-lucide="check" class="w-4 h-4 text-gold"></i>
+          Moroccan hospitality
+        </li>
+
+      </ul>
+
+      <a
+        href="contact.html"
+        class="btn-gold inline-block px-7 py-3 rounded-full font-medium"
+      >
+        Learn More About Us
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- VALUES -->
+<section class="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+  <div class="reveal text-center mb-14">
+    <h2 class="font-display text-3xl md:text-4xl">What We Stand For</h2>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="reveal text-center px-4">
+      <i data-lucide="clock" class="w-7 h-7 text-gold mx-auto mb-4"></i>
+      <h3 class="font-display text-base mb-2">Reliability</h3>
+      <p class="text-sm text-charcoal/65">We respect your schedule and make your journey stress-free.</p>
+    </div>
+    <div class="reveal text-center px-4">
+      <i data-lucide="sofa" class="w-7 h-7 text-gold mx-auto mb-4"></i>
+      <h3 class="font-display text-base mb-2">Comfort</h3>
+      <p class="text-sm text-charcoal/65">We focus on providing a comfortable travel experience.</p>
+    </div>
+    <div class="reveal text-center px-4">
+      <i data-lucide="shield" class="w-7 h-7 text-gold mx-auto mb-4"></i>
+      <h3 class="font-display text-base mb-2">Safety</h3>
+      <p class="text-sm text-charcoal/65">Your safety is one of our highest priorities.</p>
+    </div>
+    <div class="reveal text-center px-4">
+      <i data-lucide="heart-handshake" class="w-7 h-7 text-gold mx-auto mb-4"></i>
+      <h3 class="font-display text-base mb-2">Hospitality</h3>
+      <p class="text-sm text-charcoal/65">We welcome every traveler with genuine Moroccan hospitality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="bg-beige py-24 border-y border-sand/50">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10">
+    <div class="reveal text-center mb-14">
+      <h2 class="font-display text-3xl md:text-4xl">Your Journey Starts Here</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="reveal">
+        <span class="font-display text-4xl text-gold/70">01</span>
+        <h3 class="font-display text-lg mt-2 mb-2">Request</h3>
+        <p class="text-sm text-charcoal/65">Tell us where you want to go and when.</p>
+      </div>
+      <div class="reveal">
+        <span class="font-display text-4xl text-gold/70">02</span>
+        <h3 class="font-display text-lg mt-2 mb-2">Plan</h3>
+        <p class="text-sm text-charcoal/65">We help organize the transportation according to your needs.</p>
+      </div>
+      <div class="reveal">
+        <span class="font-display text-4xl text-gold/70">03</span>
+        <h3 class="font-display text-lg mt-2 mb-2">Confirm</h3>
+        <p class="text-sm text-charcoal/65">Confirm your journey and receive the details.</p>
+      </div>
+      <div class="reveal">
+        <span class="font-display text-4xl text-gold/70">04</span>
+        <h3 class="font-display text-lg mt-2 mb-2">Enjoy</h3>
+        <p class="text-sm text-charcoal/65">Meet your professional driver and enjoy your Moroccan journey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="max-w-7xl mx-auto px-6 lg:px-10 py-24">
+  <div class="reveal text-center mb-14">
+    <h2 class="font-display text-3xl md:text-4xl">What Our Travelers Say</h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-7">
+    <div class="reveal gold-card border border-sand/60 rounded-2xl p-7 bg-white">
+      <div class="flex gap-1 text-gold mb-4">★★★★★</div>
+      <p class="text-sm text-charcoal/75 italic mb-5">"Our airport transfer was perfectly organized. The driver was punctual, welcoming and made our first moments in Morocco completely stress-free."</p>
+      <p class="text-sm font-medium">Sophie M.</p>
+      <p class="text-xs text-charcoal/50">France · Marrakech</p>
+    </div>
+    <div class="reveal gold-card border border-sand/60 rounded-2xl p-7 bg-white">
+      <div class="flex gap-1 text-gold mb-4">★★★★★</div>
+      <p class="text-sm text-charcoal/75 italic mb-5">"From Marrakech to the Sahara, every detail of our private tour was handled with care. Comfortable journeys, beautiful recommendations and genuine Moroccan hospitality."</p>
+      <p class="text-sm font-medium">Daniel R.</p>
+      <p class="text-xs text-charcoal/50">United Kingdom · Private Tour</p>
+    </div>
+    <div class="reveal gold-card border border-sand/60 rounded-2xl p-7 bg-white">
+      <div class="flex gap-1 text-gold mb-4">★★★★★</div>
+      <p class="text-sm text-charcoal/75 italic mb-5">"Traveling with our family was easy and comfortable. The vehicle was clean, spacious and our driver was kind with the children throughout the journey."</p>
+      <p class="text-sm font-medium">Amelia K.</p>
+      <p class="text-xs text-charcoal/50">Canada · Family Journey</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<!-- GALLERY -->
+<section id="gallery" class="bg-charcoal py-24">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- TITLE -->
+    <div class="reveal text-center mb-14">
+
+      <p class="text-gold uppercase tracking-[0.25em] text-xs mb-3">
+        Gallery
+      </p>
+
+      <h2 class="font-display text-white text-3xl md:text-4xl">
+        Morocco, Through Every Journey
+      </h2>
+
+    </div>
+
+
+    <!-- GALLERY GRID -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[140px] md:auto-rows-[160px]">
+
+      <!-- SAHARA -->
+      <div class="reveal zoom-wrap rounded-xl overflow-hidden row-span-2 col-span-1 relative">
+
+        <img
+          src="images/gallery-sahara.jpg"
+          alt="Sahara Desert"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-4 left-4 text-white text-sm font-medium">
+          Sahara Desert
+        </span>
+
+      </div>
+
+
+      <!-- MARRAKECH -->
+      <div class="reveal zoom-wrap rounded-xl overflow-hidden relative">
+
+        <img
+          src="images/gallery-marrakech.jpg"
+          alt="Marrakech"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-3 left-3 text-white text-sm font-medium">
+          Marrakech
+        </span>
+
+      </div>
+
+
+      <!-- CHEFCHAOUEN -->
+      <div class="reveal zoom-wrap rounded-xl overflow-hidden relative">
+
+        <img
+          src="images/gallery-chefchaouen.jpg"
+          alt="Chefchaouen"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-3 left-3 text-white text-sm font-medium">
+          Chefchaouen
+        </span>
+
+      </div>
+
+
+      <!-- ATLAS -->
+      <div class="reveal zoom-wrap rounded-xl overflow-hidden row-span-2 relative">
+
+        <img
+          src="images/gallery-atlas.jpg"
+          alt="Atlas Mountains"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-4 left-4 text-white text-sm font-medium">
+          Atlas Mountains
+        </span>
+
+      </div>
+
+
+      <!-- ESSAOUIRA -->
+      <div class="reveal zoom-wrap rounded-xl overflow-hidden relative">
+
+        <img
+          src="images/gallery-essaouira.jpg"
+          alt="Essaouira"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-3 left-3 text-white text-sm font-medium">
+          Essaouira
+        </span>
+
+      </div>
+
+
+      <!-- TRANSPORT -->
+      <div class="reveal zoom-wrap rounded-xl overflow-hidden relative">
+
+        <img
+          src="images/gallery-transport.jpg"
+          alt="Luxury Transportation"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-3 left-3 text-white text-sm font-medium">
+          Luxury Transportation
+        </span>
+
+      </div>
+
+
+      <!-- ARCHITECTURE -->
+      <div class="reveal zoom-wrap rounded-xl overflow-hidden col-span-2 relative">
+
+        <img
+          src="images/gallery-architecture.jpg"
+          alt="Moroccan Architecture"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-4 left-4 text-white text-sm font-medium">
+          Moroccan Architecture
+        </span>
+
+      </div>
+
+
+      <!-- CHAUFFEUR -->
+      <div class="reveal zoom-wrap rounded-xl overflow-hidden relative">
+
+        <img
+          src="images/gallery-chauffeur.jpg"
+          alt="Professional Chauffeur"
+          class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+        >
+
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+
+        <span class="absolute bottom-3 left-3 text-white text-sm font-medium">
+          Professional Chauffeur
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- BUTTON -->
+    <div class="reveal text-center mt-12">
+
+      <a
+        href="#gallery"
+        class="btn-outline inline-block px-7 py-3 rounded-full font-medium"
+      >
+        View Gallery
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CTA STRIP -->
+<section class="max-w-7xl mx-auto px-6 lg:px-10 py-20 text-center reveal">
+  <h2 class="font-display text-3xl md:text-4xl mb-6">Ready to Explore Morocco?</h2>
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="booking.html" class="btn-gold px-8 py-3.5 rounded-full font-medium">Request a Quote</a>
+    <a href="contact.html" class="border border-charcoal px-8 py-3.5 rounded-full font-medium hover:bg-charcoal hover:text-white transition-colors">Contact Us</a>
+  </div>
+</section>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/212657235089" target="_blank" rel="noopener" class="group fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-transform" aria-label="Chat with us on WhatsApp">
+  <i data-lucide="message-circle" class="w-7 h-7"></i>
+  <span class="absolute right-16 whitespace-nowrap bg-charcoal text-white text-xs px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">Chat with us on WhatsApp</span>
+</a>
+
+<!-- FOOTER -->
+<footer class="bg-charcoal border-t border-white/10 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <a href="index.html" class="footer-logo mb-3" aria-label="Oumama Tours home">
+        <img src="images/oumama-tours-logo-v2.svg" alt="Oumama Tours" class="site-logo site-logo-footer">
+      </a>
+      <p class="text-white/55 text-sm">Discover Morocco. Travel in Comfort.</p>
+      <div class="flex gap-3 mt-5 text-white/60">
+        <a href="#" aria-label="Instagram" class="hover:text-gold"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="Facebook" class="hover:text-gold"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="TikTok" class="hover:text-gold"><i data-lucide="music-2" class="w-5 h-5"></i></a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-gold"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+      </div>
+    </div>
+    <div>
+      <p class="text-gold text-xs uppercase tracking-wide mb-4">Explore</p>
+      <ul class="space-y-2.5 text-sm text-white/60">
+        <li><a href="index.html#home" class="hover:text-white">Home</a></li>
+        <li><a href="index.html#about" class="hover:text-white">About Us</a></li>
+        <li><a href="index.html#services" class="hover:text-white">Services</a></li>
+        <li><a href="index.html#destinations" class="hover:text-white">Destinations</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-gold text-xs uppercase tracking-wide mb-4">Company</p>
+      <ul class="space-y-2.5 text-sm text-white/60">
+        <li><a href="index.html#tours" class="hover:text-white">Tours</a></li>
+        <li><a href="index.html#fleet" class="hover:text-white">Fleet</a></li>
+        <li><a href="index.html#gallery" class="hover:text-white">Gallery</a></li>
+        <li><a href="booking.html" class="hover:text-white">Booking</a></li>
+        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-gold text-xs uppercase tracking-wide mb-4">Contact</p>
+      <ul class="space-y-2.5 text-sm text-white/60">
+        <li>0657235089</li>
+        <li>contact@oumamatours.com</li>
+        <li>0657235089</li>
+        <li>Morocco</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45">
+    <p>&copy; 2026 Oumama Tours. All rights reserved.</p>
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-white">Privacy Policy</a>
+      <a href="#" class="hover:text-white">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact Us | Oumama Tours</title>
+
+  <meta
+    name="description"
+    content="Get in touch with Oumama Tours to plan your private transportation and tours across Morocco."
+  />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#171717',
+            beige: '#F3EBDD',
+            sand: '#D8C3A5',
+            gold: '#C8A45D'
+          },
+
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+
+<body class="antialiased">
+
+
+<!-- ========================================================= -->
+<!-- HEADER -->
+<!-- ========================================================= -->
+
+<header
+  id="site-header"
+  class="fixed top-0 left-0 w-full z-50 scrolled"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between py-5"
+  >
+
+    <!-- Logo -->
+    <a
+      href="index.html"
+      aria-label="Oumama Tours home"
+    >
+      <img src="images/oumama-tours-logo-v2.svg" alt="Oumama Tours" class="site-logo site-logo-header">
+    </a>
+
+
+    <!-- Desktop Navigation -->
+    <nav
+      class="hidden lg:flex items-center gap-8 text-white/90 text-sm tracking-wide"
+    >
+
+      <a
+        href="index.html#home"
+        class="hover:text-gold transition-colors"
+      >
+        Home
+      </a>
+
+      <a
+        href="index.html#about"
+        class="hover:text-gold transition-colors"
+      >
+        About Us
+      </a>
+
+      <a
+        href="index.html#services"
+        class="hover:text-gold transition-colors"
+      >
+        Services
+      </a>
+
+      <a
+        href="index.html#destinations"
+        class="hover:text-gold transition-colors"
+      >
+        Destinations
+      </a>
+
+      <a
+        href="index.html#fleet"
+        class="hover:text-gold transition-colors"
+      >
+        Fleet
+      </a>
+
+      <a
+        href="index.html#tours"
+        class="hover:text-gold transition-colors"
+      >
+        Tours
+      </a>
+
+      <a
+        href="index.html#gallery"
+        class="hover:text-gold transition-colors"
+      >
+        Gallery
+      </a>
+
+      <a
+        href="contact.html"
+        class="text-gold"
+      >
+        Contact
+      </a>
+
+    </nav>
+
+
+    <!-- Desktop Buttons -->
+    <div class="hidden lg:flex items-center gap-3">
+
+      <a
+        href="https://wa.me/212657235089"
+        target="_blank"
+        rel="noopener"
+        class="btn-outline text-sm px-4 py-2 rounded-full flex items-center gap-2"
+      >
+
+        <i
+          data-lucide="message-circle"
+          class="w-4 h-4"
+        ></i>
+
+        WhatsApp Us
+
+      </a>
+
+
+      <a
+        href="booking.html"
+        class="btn-gold text-sm font-medium px-5 py-2.5 rounded-full"
+      >
+        Book Your Ride
+      </a>
+
+    </div>
+
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="menu-toggle"
+      class="lg:hidden text-white"
+      aria-label="Toggle menu"
+    >
+
+      <i
+        data-lucide="menu"
+        id="icon-open"
+        class="w-7 h-7"
+      ></i>
+
+      <i
+        data-lucide="x"
+        id="icon-close"
+        class="w-7 h-7 hidden"
+      ></i>
+
+    </button>
+
+  </div>
+
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden overflow-hidden max-h-0 opacity-0 bg-charcoal/97 backdrop-blur"
+  >
+
+    <div
+      class="flex flex-col gap-5 px-6 py-6 text-white text-base"
+    >
+
+      <a href="index.html#home">
+        Home
+      </a>
+
+      <a href="index.html#about">
+        About Us
+      </a>
+
+      <a href="index.html#services">
+        Services
+      </a>
+
+      <a href="index.html#destinations">
+        Destinations
+      </a>
+
+      <a href="index.html#fleet">
+        Fleet
+      </a>
+
+      <a href="index.html#tours">
+        Tours
+      </a>
+
+      <a href="index.html#gallery">
+        Gallery
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- ========================================================= -->
+<!-- PAGE HERO -->
+<!-- ========================================================= -->
+
+<section
+  class="photo-placeholder pt-40 pb-20 relative"
+>
+
+  <div
+    class="absolute inset-0 bg-charcoal/55"
+  ></div>
+
+  <div
+    class="relative z-10 max-w-4xl mx-auto px-6 text-center"
+  >
+
+    <p
+      class="text-gold uppercase tracking-[0.25em] text-xs mb-4"
+    >
+      Contact
+    </p>
+
+    <h1
+      class="font-display text-white text-4xl md:text-5xl"
+    >
+      Let's Plan Your Journey
+    </h1>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CONTACT CARDS -->
+<!-- ========================================================= -->
+
+<section
+  class="max-w-7xl mx-auto px-6 lg:px-10 py-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+>
+
+
+  <!-- Phone -->
+  <div
+    class="reveal gold-card border border-sand/60 rounded-2xl p-7 text-center bg-white"
+  >
+
+    <i
+      data-lucide="phone"
+      class="w-7 h-7 text-gold mx-auto mb-4"
+    ></i>
+
+    <h3
+      class="font-display text-base mb-2"
+    >
+      Phone
+    </h3>
+
+    <p
+      class="text-sm text-charcoal/60"
+    >
+      0657235089
+    </p>
+
+  </div>
+
+
+  <!-- WhatsApp -->
+  <div
+    class="reveal gold-card border border-sand/60 rounded-2xl p-7 text-center bg-white"
+  >
+
+    <i
+      data-lucide="message-circle"
+      class="w-7 h-7 text-gold mx-auto mb-4"
+    ></i>
+
+    <h3
+      class="font-display text-base mb-2"
+    >
+      WhatsApp
+    </h3>
+
+    <p
+      class="text-sm text-charcoal/60"
+    >
+      0657235089
+    </p>
+
+  </div>
+
+
+  <!-- Email -->
+  <div
+    class="reveal gold-card border border-sand/60 rounded-2xl p-7 text-center bg-white"
+  >
+
+    <i
+      data-lucide="mail"
+      class="w-7 h-7 text-gold mx-auto mb-4"
+    ></i>
+
+    <h3
+      class="font-display text-base mb-2"
+    >
+      Email
+    </h3>
+
+    <p
+      class="text-sm text-charcoal/60"
+    >
+      contact@oumamatours.com
+    </p>
+
+  </div>
+
+
+  <!-- Location -->
+  <div
+    class="reveal gold-card border border-sand/60 rounded-2xl p-7 text-center bg-white"
+  >
+
+    <i
+      data-lucide="map-pin"
+      class="w-7 h-7 text-gold mx-auto mb-4"
+    ></i>
+
+    <h3
+      class="font-display text-base mb-2"
+    >
+      Location
+    </h3>
+
+    <p
+      class="text-sm text-charcoal/60"
+    >
+      Morocco
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CONTACT FORM + MAP -->
+<!-- ========================================================= -->
+
+<section
+  class="max-w-7xl mx-auto px-6 lg:px-10 pb-24 grid lg:grid-cols-2 gap-10"
+>
+
+
+  <!-- ======================================================= -->
+  <!-- CONTACT FORM -->
+  <!-- ======================================================= -->
+
+  <div>
+
+
+    <form
+      id="contact-form"
+      class="bg-white border border-sand/60 rounded-2xl p-7 md:p-9 space-y-5"
+    >
+
+
+      <!-- NAME -->
+      <div class="flex flex-col gap-1.5">
+
+        <label
+          class="text-xs uppercase tracking-wide text-charcoal/60"
+        >
+          Name
+        </label>
+
+        <input
+          required
+          type="text"
+          name="name"
+          autocomplete="name"
+          class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none"
+        />
+
+      </div>
+
+
+      <!-- EMAIL -->
+      <div class="flex flex-col gap-1.5">
+
+        <label
+          class="text-xs uppercase tracking-wide text-charcoal/60"
+        >
+          Email
+        </label>
+
+        <input
+          required
+          type="email"
+          name="email"
+          autocomplete="email"
+          class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none"
+        />
+
+      </div>
+
+
+      <!-- PHONE -->
+      <div class="flex flex-col gap-1.5">
+
+        <label
+          class="text-xs uppercase tracking-wide text-charcoal/60"
+        >
+          Phone
+        </label>
+
+        <input
+          type="tel"
+          name="phone"
+          autocomplete="tel"
+          class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none"
+        />
+
+      </div>
+
+
+      <!-- SUBJECT -->
+      <div class="flex flex-col gap-1.5">
+
+        <label
+          class="text-xs uppercase tracking-wide text-charcoal/60"
+        >
+          Subject
+        </label>
+
+        <input
+          type="text"
+          name="subject"
+          class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none"
+        />
+
+      </div>
+
+
+      <!-- MESSAGE -->
+      <div class="flex flex-col gap-1.5">
+
+        <label
+          class="text-xs uppercase tracking-wide text-charcoal/60"
+        >
+          Message
+        </label>
+
+        <textarea
+          rows="5"
+          required
+          name="message"
+          placeholder="Tell us how we can help you..."
+          class="border border-sand rounded-lg px-4 py-3 text-sm focus:border-gold outline-none resize-none"
+        ></textarea>
+
+      </div>
+
+
+      <!-- SUBMIT -->
+      <button
+        type="submit"
+        id="contact-submit"
+        class="btn-gold w-full py-4 rounded-full font-medium text-sm"
+      >
+        Send Message
+      </button>
+
+
+      <!-- ERROR MESSAGE -->
+      <div
+        id="contact-error"
+        class="hidden bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm"
+      ></div>
+
+    </form>
+
+
+    <!-- ===================================================== -->
+    <!-- SUCCESS MESSAGE -->
+    <!-- ===================================================== -->
+
+    <div
+      id="contact-confirmation"
+      class="hidden bg-white border border-sand/60 rounded-2xl p-10 text-center"
+    >
+
+      <i
+        data-lucide="check-circle-2"
+        class="w-12 h-12 text-gold mx-auto mb-5"
+      ></i>
+
+      <h2
+        class="font-display text-2xl mb-3"
+      >
+        Message sent
+      </h2>
+
+      <p
+        class="text-charcoal/70"
+      >
+        Thank you for reaching out.
+        Oumama Tours will get back to you shortly.
+      </p>
+
+      <button
+        type="button"
+        id="send-another-message"
+        class="btn-gold inline-block mt-7 px-7 py-3 rounded-full font-medium"
+      >
+        Send Another Message
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ======================================================= -->
+  <!-- MAP -->
+  <!-- ======================================================= -->
+
+  <div
+    class="rounded-2xl overflow-hidden border border-sand/60 min-h-[420px] photo-placeholder relative"
+  >
+
+    <div
+      class="absolute inset-0 flex items-center justify-center"
+    >
+
+      <div
+        class="text-center text-beige"
+      >
+
+        <i
+          data-lucide="map"
+          class="w-10 h-10 mx-auto mb-3 text-gold"
+        ></i>
+
+        <p class="text-sm">
+          Interactive map placeholder — company location to be added
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- FLOATING WHATSAPP -->
+<!-- ========================================================= -->
+
+<a
+  href="https://wa.me/212657235089"
+  target="_blank"
+  rel="noopener"
+  class="group fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition-transform"
+  aria-label="Chat with us on WhatsApp"
+>
+
+  <i
+    data-lucide="message-circle"
+    class="w-7 h-7"
+  ></i>
+
+  <span
+    class="absolute right-16 whitespace-nowrap bg-charcoal text-white text-xs px-3 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+  >
+    Chat with us on WhatsApp
+  </span>
+
+</a>
+
+
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
+
+<footer
+  class="bg-charcoal border-t border-white/10 pt-16 pb-8"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-6 lg:px-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-10"
+  >
+
+
+    <!-- Company -->
+    <div>
+
+      <p
+        class="footer-logo mb-3"
+        aria-label="Oumama Tours home"
+      >
+        <img src="images/oumama-tours-logo-v2.svg" alt="Oumama Tours" class="site-logo site-logo-footer">
+      </p>
+
+      <p
+        class="text-white/55 text-sm"
+      >
+        Discover Morocco. Travel in Comfort.
+      </p>
+
+      <div
+        class="flex gap-3 mt-5 text-white/60"
+      >
+
+        <a
+          href="#"
+          aria-label="Instagram"
+          class="hover:text-gold"
+        >
+          <i
+            data-lucide="instagram"
+            class="w-5 h-5"
+          ></i>
+        </a>
+
+        <a
+          href="#"
+          aria-label="Facebook"
+          class="hover:text-gold"
+        >
+          <i
+            data-lucide="facebook"
+            class="w-5 h-5"
+          ></i>
+        </a>
+
+        <a
+          href="#"
+          aria-label="TikTok"
+          class="hover:text-gold"
+        >
+          <i
+            data-lucide="music-2"
+            class="w-5 h-5"
+          ></i>
+        </a>
+
+        <a
+          href="#"
+          aria-label="LinkedIn"
+          class="hover:text-gold"
+        >
+          <i
+            data-lucide="linkedin"
+            class="w-5 h-5"
+          ></i>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- Explore -->
+    <div>
+
+      <p
+        class="text-gold text-xs uppercase tracking-wide mb-4"
+      >
+        Explore
+      </p>
+
+      <ul
+        class="space-y-2.5 text-sm text-white/60"
+      >
+
+        <li>
+          <a
+            href="index.html#home"
+            class="hover:text-white"
+          >
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="index.html#about"
+            class="hover:text-white"
+          >
+            About Us
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="index.html#services"
+            class="hover:text-white"
+          >
+            Services
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="index.html#destinations"
+            class="hover:text-white"
+          >
+            Destinations
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- Company Links -->
+    <div>
+
+      <p
+        class="text-gold text-xs uppercase tracking-wide mb-4"
+      >
+        Company
+      </p>
+
+      <ul
+        class="space-y-2.5 text-sm text-white/60"
+      >
+
+        <li>
+          <a
+            href="index.html#tours"
+            class="hover:text-white"
+          >
+            Tours
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="index.html#fleet"
+            class="hover:text-white"
+          >
+            Fleet
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="index.html#gallery"
+            class="hover:text-white"
+          >
+            Gallery
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="booking.html"
+            class="hover:text-white"
+          >
+            Booking
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="contact.html"
+            class="hover:text-white"
+          >
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- Contact -->
+    <div>
+
+      <p
+        class="text-gold text-xs uppercase tracking-wide mb-4"
+      >
+        Contact
+      </p>
+
+      <ul
+        class="space-y-2.5 text-sm text-white/60"
+      >
+
+        <li>0657235089</li>
+        <li>contact@oumamatours.com</li>
+        <li>0657235089</li>
+        <li>Morocco</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <!-- Copyright -->
+
+  <div
+    class="max-w-7xl mx-auto px-6 lg:px-10 mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/45"
+  >
+
+    <p>
+      &copy; 2026 Oumama Tours. All rights reserved.
+    </p>
+
+    <div class="flex gap-6">
+
+      <a
+        href="#"
+        class="hover:text-white"
+      >
+        Privacy Policy
+      </a>
+
+      <a
+        href="#"
+        class="hover:text-white"
+      >
+        Terms & Conditions
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ========================================================= -->
+<!-- MAIN JS -->
+<!-- ========================================================= -->
+
+<script src="js/main.js"></script>
+
+
+<!-- ========================================================= -->
+<!-- CONTACT API -->
+<!-- ========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /*
+   * Get elements
+   */
+
+  const contactForm =
+    document.getElementById("contact-form");
+
+  const confirmation =
+    document.getElementById("contact-confirmation");
+
+  const errorBox =
+    document.getElementById("contact-error");
+
+  const submitButton =
+    document.getElementById("contact-submit");
+
+  const sendAnotherButton =
+    document.getElementById("send-another-message");
+
+
+  /*
+   * Make sure the form exists
+   */
+
+  if (!contactForm) {
+    return;
+  }
+
+
+  /*
+   * Submit contact form
+   */
+
+  contactForm.addEventListener("submit", async (event) => {
+
+    event.preventDefault();
+
+
+    /*
+     * Hide previous error
+     */
+
+    errorBox.classList.add("hidden");
+    errorBox.textContent = "";
+
+
+    /*
+     * Save original button text
+     */
+
+    const originalButtonText =
+      submitButton.textContent;
+
+
+    /*
+     * Disable button
+     */
+
+    submitButton.disabled = true;
+
+    submitButton.textContent =
+      "Sending...";
+
+
+    /*
+     * Get form data
+     */
+
+    const formData =
+      new FormData(contactForm);
+
+
+    /*
+     * Convert FormData to object
+     */
+
+    const data =
+      Object.fromEntries(
+        formData.entries()
+      );
+
+
+    console.log(
+      "Sending contact message:",
+      data
+    );
+
+
+    try {
+
+      /*
+       * Send data to Node.js
+       */
+
+      const response =
+        await fetch(
+          "/api/contacts",
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+
+            body: JSON.stringify(data)
+          }
+        );
+
+
+      /*
+       * Get server response
+       */
+
+      const result =
+        await response.json();
+
+
+      console.log(
+        "Server response:",
+        result
+      );
+
+
+      /*
+       * Check response
+       */
+
+      if (!response.ok) {
+
+        throw new Error(
+          result.message ||
+          "Unable to send your message."
+        );
+
+      }
+
+
+      /*
+       * Hide form
+       */
+
+      contactForm.classList.add(
+        "hidden"
+      );
+
+
+      /*
+       * Show confirmation
+       */
+
+      confirmation.classList.remove(
+        "hidden"
+      );
+
+
+      /*
+       * Reset form
+       */
+
+      contactForm.reset();
+
+
+      /*
+       * Refresh Lucide icons
+       */
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+
+    } catch (error) {
+
+      console.error(
+        "Contact error:",
+        error
+      );
+
+
+      /*
+       * Show error
+       */
+
+      errorBox.textContent =
+        error.message ||
+        "Sorry, your message could not be sent. Please try again.";
+
+      errorBox.classList.remove(
+        "hidden"
+      );
+
+
+    } finally {
+
+      /*
+       * Enable button again
+       */
+
+      submitButton.disabled =
+        false;
+
+      submitButton.textContent =
+        originalButtonText;
+
+    }
+
+  });
+
+
+  /*
+   * Send another message
+   */
+
+  if (sendAnotherButton) {
+
+    sendAnotherButton.addEventListener(
+      "click",
+      () => {
+
+        confirmation.classList.add(
+          "hidden"
+        );
+
+        contactForm.classList.remove(
+          "hidden"
+        );
+
+        errorBox.classList.add(
+          "hidden"
+        );
+
+        contactForm.reset();
+
+      }
+    );
+
+  }
+
+});
+
+</script>
+
+
+<!-- Initialize Lucide -->
+<script>
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+</script>
+
+
+</body>
+</html>

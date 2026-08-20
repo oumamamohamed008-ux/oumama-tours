@@ -1,0 +1,204 @@
+/* Oumama Tours — shared styles */
+
+:root {
+  --charcoal: #171717;
+  --beige: #F3EBDD;
+  --sand: #D8C3A5;
+  --gold: #C8A45D;
+  --white: #FFFFFF;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--beige);
+  color: var(--charcoal);
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--white);
+  line-height: 1;
+}
+.brand-logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  transform: rotate(45deg);
+}
+.brand-logo-mark span { transform: rotate(-45deg); }
+.brand-logo-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  letter-spacing: 0.14em;
+}
+.brand-logo-name span {
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+}
+.footer-logo .brand-logo-mark { width: 2.15rem; height: 2.15rem; }
+.footer-logo .brand-logo-name { font-size: 1rem; }
+.site-logo {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
+.site-logo-header { width: 148px; height: 46px; }
+.site-logo-footer { width: 184px; height: 58px; }
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Zellige-inspired signature motif — used sparingly as dividers & corner accents */
+.zellige-divider {
+  height: 14px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='14' viewBox='0 0 28 14'%3E%3Cpath d='M14 0 L21 7 L14 14 L7 7 Z' fill='none' stroke='%23C8A45D' stroke-width='1' opacity='0.55'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+.zellige-corner {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Placeholder photo panels (no real imagery available yet) */
+.photo-placeholder {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: linear-gradient(135deg, #171717 0%, #3a3128 45%, #C8A45D 100%);
+}
+.photo-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='28' viewBox='0 0 56 28'%3E%3Cpath d='M28 0 L42 14 L28 28 L14 14 Z' fill='none' stroke='%23F3EBDD' stroke-width='0.75' opacity='0.18'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+.photo-placeholder-label {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 14px 16px;
+  background: linear-gradient(to top, rgba(23,23,23,0.85), transparent);
+  color: #F3EBDD;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Header transition */
+#site-header {
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
+}
+#site-header.scrolled {
+  background-color: rgba(23,23,23,0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+
+/* Fade-in on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero entrance */
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-anim-1 { animation: heroFade 0.9s ease 0.1s both; }
+.hero-anim-2 { animation: heroFade 0.9s ease 0.35s both; }
+.hero-anim-3 { animation: heroFade 0.9s ease 0.6s both; }
+.hero-anim-4 { animation: heroFade 0.9s ease 0.85s both; }
+
+/* Scroll indicator */
+@keyframes scrollDown {
+  0% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(10px); opacity: 0.4; }
+  100% { transform: translateY(0); opacity: 0.9; }
+}
+.scroll-indicator { animation: scrollDown 2s ease-in-out infinite; }
+
+/* Card hover */
+.gold-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.gold-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(23,23,23,0.12);
+  border-color: var(--gold);
+}
+
+/* Image zoom on hover */
+.zoom-wrap { overflow: hidden; }
+.zoom-wrap .zoom-img {
+  transition: transform 0.6s ease;
+}
+.zoom-wrap:hover .zoom-img {
+  transform: scale(1.06);
+}
+
+/* Buttons */
+.btn-gold {
+  background-color: var(--gold);
+  color: var(--charcoal);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-gold:hover { background-color: #b8924f; transform: translateY(-2px); }
+
+.btn-outline {
+  border: 1px solid var(--white);
+  color: var(--white);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn-outline:hover { background-color: var(--white); color: var(--charcoal); transform: translateY(-2px); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .hero-anim-1, .hero-anim-2, .hero-anim-3, .hero-anim-4, .scroll-indicator, .gold-card, .zoom-wrap .zoom-img {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Mobile menu */
+#mobile-menu {
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
