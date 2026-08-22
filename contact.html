@@ -879,6 +879,9 @@
 <!-- ========================================================= -->
 
 <script>
+const API_BASE_URL = (window.location.protocol === "file:")
+  ? "http://localhost:5000"
+  : "";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -923,7 +926,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (text.toLowerCase().includes("required fields")) {
-      return "Veuillez remplir tous les champs requis avant d’envoyer votre message.";
+      return "Veuillez remplir tous les champs obligatoires avant d’envoyer votre message.";
     }
 
     if (text.toLowerCase().includes("server error") || text.toLowerCase().includes("server")) {
@@ -996,7 +999,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const response =
         await fetch(
-          "/api/contacts",
+          `${API_BASE_URL}/api/contacts`,
           {
             method: "POST",
 

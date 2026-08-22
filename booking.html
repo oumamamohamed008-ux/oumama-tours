@@ -230,6 +230,10 @@
 <script src="js/main.js"></script>
 
 <script>
+const API_BASE_URL = (window.location.protocol === "file:")
+  ? "http://localhost:5000"
+  : "";
+
 document.addEventListener("DOMContentLoaded", () => {
   const bookingForm = document.getElementById("booking-form");
   const confirmation = document.getElementById("booking-confirmation");
@@ -269,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
     data.return_trip = data.return_trip === "true";
 
     try {
-      const response = await fetch("/api/bookings", {
+      const response = await fetch(`${API_BASE_URL}/api/bookings`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -283,10 +287,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         const serverMessage = result && result.message ? result.message : "";
         const message = serverMessage.includes("required fields")
-          ? "Veuillez remplir tous les champs requis."
+          ? "Veuillez remplir tous les champs requis avant de soumettre votre demande."
           : serverMessage.includes("Server error") || serverMessage.includes("server")
             ? "Une erreur serveur est survenue. Veuillez réessayer plus tard."
-            : serverMessage || "Impossible d’envoyer votre demande de réservation. Réessayez.";
+            : serverMessage || "Votre demande de réservation n’a pas pu être envoyée. Veuillez réessayer.";
 
         throw new Error(message);
       }
