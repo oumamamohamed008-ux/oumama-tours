@@ -915,6 +915,24 @@ document.addEventListener("DOMContentLoaded", () => {
    * Submit contact form
    */
 
+  const formatContactError = (message) => {
+    const text = typeof message === "string" ? message : "";
+
+    if (!text) {
+      return "Votre message n’a pas pu être envoyé. Veuillez réessayer.";
+    }
+
+    if (text.toLowerCase().includes("required fields")) {
+      return "Veuillez remplir tous les champs requis avant d’envoyer votre message.";
+    }
+
+    if (text.toLowerCase().includes("server error") || text.toLowerCase().includes("server")) {
+      return "Une erreur serveur est survenue. Veuillez réessayer plus tard.";
+    }
+
+    return text;
+  };
+
   contactForm.addEventListener("submit", async (event) => {
 
     event.preventDefault();
@@ -1013,8 +1031,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
 
         throw new Error(
-          result.message ||
-          "Unable to send your message."
+          formatContactError(
+            result && result.message
+              ? result.message
+              : "Unable to send your message."
+          )
         );
 
       }
@@ -1067,12 +1088,19 @@ document.addEventListener("DOMContentLoaded", () => {
        */
 
       errorBox.textContent =
-        error.message ||
-        "Sorry, your message could not be sent. Please try again.";
+        formatContactError(
+          error.message ||
+          "Sorry, your message could not be sent. Please try again."
+        );
 
       errorBox.classList.remove(
         "hidden"
       );
+
+      errorBox.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
 
 
     } finally {
