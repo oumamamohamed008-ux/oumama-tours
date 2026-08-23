@@ -2,7 +2,7 @@
 
 ## 1. Prepare MySQL
 
-Create the `oumama_tours` database and the `bookings` and `contacts` tables expected by the controllers. Keep database credentials only in the hosting provider's environment variables.
+Create the `oumama_tours` database, then import `backend/schema.sql` in phpMyAdmin to create the `bookings` and `contacts` tables expected by the controllers. Keep database credentials only in the hosting provider's environment variables.
 
 ## 2. Configure the backend
 
@@ -11,7 +11,7 @@ Copy `backend/.env.example` to a private environment configuration. Set:
 - `PORT`: the port supplied by the hosting provider, when required.
 - `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, `DB_PORT`: production MySQL credentials.
 - `ADMIN_API_KEY`: a long random secret for reading bookings and contact messages.
-- `ALLOWED_ORIGINS`: the public site origin, for example `https://www.example.com`. Use comma-separated origins only when the API is hosted separately.
+- `ALLOWED_ORIGINS`: `https://oumamatours.site` when the frontend and API use the same domain.
 
 Never commit `backend/.env`.
 
@@ -30,6 +30,8 @@ The Express server serves both the API and the static site. Verify:
 GET /api/health
 GET /index.html
 ```
+
+`GET /api/health` must return HTTP 200 before the public forms can save data. If it returns 500, check the Hostinger MySQL values and confirm that `backend/schema.sql` was imported into the selected database.
 
 ## 4. Admin API
 

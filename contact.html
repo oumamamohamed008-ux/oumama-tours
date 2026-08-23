@@ -1017,8 +1017,16 @@ document.addEventListener("DOMContentLoaded", () => {
        * Get server response
        */
 
-      const result =
-        await response.json();
+      const responseText = await response.text();
+      let result;
+
+      try {
+        result = JSON.parse(responseText);
+      } catch {
+        throw new Error(
+          "Le serveur Node.js ne répond pas sur l’URL de l’API. Vérifiez la configuration Hostinger."
+        );
+      }
 
 
       console.log(

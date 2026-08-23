@@ -282,7 +282,16 @@ document.addEventListener("DOMContentLoaded", () => {
         body: JSON.stringify(data)
       });
 
-      const result = await response.json();
+      const responseText = await response.text();
+      let result;
+
+      try {
+        result = JSON.parse(responseText);
+      } catch {
+        throw new Error(
+          "Le serveur Node.js ne répond pas sur l’URL de l’API. Vérifiez la configuration Hostinger."
+        );
+      }
 
       if (!response.ok) {
         const serverMessage = result && result.message ? result.message : "";

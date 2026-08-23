@@ -46,7 +46,14 @@ app.get("/api/health", async (req, res) => {
 
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/contacts", contactRoutes);
-app.use(express.static(path.join(__dirname, "..")));
+
+const siteRoot = path.join(__dirname, "..");
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(siteRoot, "index.html"));
+});
+
+app.use(express.static(siteRoot));
 
 const PORT = process.env.PORT || 5000;
 
