@@ -29,6 +29,13 @@ try {
     );
     $statement->execute([$name, $email, $phone ?: null, $subject ?: null, $message]);
 
+    $mailSubject = 'New contact message - Oumama Tours';
+    $mailBody = "Name: {$name}\nEmail: {$email}\nPhone: {$phone}\nSubject: {$subject}\n\nMessage:\n{$message}";
+    $mailHeaders = "From: Oumama Tours <contact@oumamatours.site>\r\nReply-To: {$email}\r\nContent-Type: text/plain; charset=UTF-8\r\n";
+    if (!mail($config['notification_email'], $mailSubject, $mailBody, $mailHeaders)) {
+        error_log('Contact notification email could not be sent.');
+    }
+
     http_response_code(201);
     echo json_encode(['success' => true, 'message' => 'Your message has been sent successfully.']);
 } catch (Throwable $error) {
