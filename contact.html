@@ -994,12 +994,12 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
 
       /*
-       * Send data to Node.js
+      * Send data to the PHP endpoint
        */
 
       const response =
         await fetch(
-          `${API_BASE_URL}/api/contacts`,
+          `${API_BASE_URL}/api/contact.php`,
           {
             method: "POST",
 
@@ -1024,7 +1024,7 @@ document.addEventListener("DOMContentLoaded", () => {
         result = JSON.parse(responseText);
       } catch {
         throw new Error(
-          "Le serveur Node.js ne répond pas sur l’URL de l’API. Vérifiez la configuration Hostinger."
+          "Le serveur PHP ne répond pas. Vérifiez la configuration Hostinger."
         );
       }
 

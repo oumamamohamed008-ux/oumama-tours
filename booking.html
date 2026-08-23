@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
     data.return_trip = data.return_trip === "true";
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/bookings`, {
+      const response = await fetch(`${API_BASE_URL}/api/booking.php`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
         result = JSON.parse(responseText);
       } catch {
         throw new Error(
-          "Le serveur Node.js ne répond pas sur l’URL de l’API. Vérifiez la configuration Hostinger."
+          "Le serveur PHP ne répond pas. Vérifiez la configuration Hostinger."
         );
       }
 

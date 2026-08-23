@@ -24,12 +24,14 @@ npm ci
 npm start
 ```
 
-The Express server serves both the API and the static site. Verify:
+The Express server serves both the API and the static site. For a Hostinger static/PHP deployment, the public forms use `api/contact.php` and `api/booking.php`. Verify:
 
 ```text
 GET /api/health
 GET /index.html
 ```
+
+The PHP endpoints read the same `DB_*` environment variables. If Hostinger does not expose Node.js variables to PHP, copy `api/config.php` to a private location outside `public_html` and configure the database values there, then update the two PHP files to require that private config.
 
 `GET /api/health` must return HTTP 200 before the public forms can save data. If it returns 500, check the Hostinger MySQL values and confirm that `backend/schema.sql` was imported into the selected database.
 
