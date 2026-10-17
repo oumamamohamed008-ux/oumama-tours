@@ -47,7 +47,7 @@ app.get("/api/health", async (req, res) => {
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/contacts", contactRoutes);
 
-const siteRoot = path.join(__dirname, "..");
+const siteRoot = path.join(__dirname, "public");
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(siteRoot, "index.html"));
