@@ -7,7 +7,9 @@ require("dotenv").config();
 const db = require("./config/database");
 const bookingRoutes = require("./routes/bookingRoutes");
 const contactRoutes = require("./routes/contactRoutes");
+const { createNotificationService } = require("./services/notificationService");
 const app = express();
+const notificationService = createNotificationService({ db });
 
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || "")
     .split(",")
@@ -46,6 +48,7 @@ app.get("/api/health", async (req, res) => {
 
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/contacts", contactRoutes);
+notificationService.start();
 
 const siteRoot = path.join(__dirname, "public");
 

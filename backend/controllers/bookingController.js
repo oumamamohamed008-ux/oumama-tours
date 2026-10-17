@@ -2,6 +2,7 @@ const db = require("../config/database");
 
 // Créer une réservation
 const createBooking = async (req, res) => {
+    let connection;
     try {
         const {
             full_name,
@@ -37,6 +38,16 @@ const createBooking = async (req, res) => {
             });
         }
 
+        if (
+            typeof email !== "string" ||
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())
+        ) {
+            return res.status(400).json({
+                success: false,
+                message: "Please enter a valid email address."
+            });
+        }
+
         const sql = `
             INSERT INTO bookings (
                 full_name,
@@ -58,7 +69,7 @@ const createBooking = async (req, res) => {
 
         const values = [
             full_name,
-            email,
+            email.trim(),
             phone,
             pickup_location,
             destination,
@@ -72,15 +83,26 @@ const createBooking = async (req, res) => {
             additional_requests || null
         ];
 
-        const [result] = await db.execute(sql, values);
+        connection = await db.getConnection();
+        await connection.beginTransaction();
+        const [result] = await connection.execute(sql, values);
+        await connection.execute(
+            `INSERT INTO notification_outbox (event_type, record_id)
+             VALUES ('booking', ?)`,
+            [result.insertId]
+        );
+        await connection.commit();
 
         res.status(201).json({
             success: true,
-            message: "Booking submitted successfully.",
+            message: "Booking request received successfully.",
             booking_id: result.insertId
         });
 
     } catch (error) {
+        if (connection) {
+            await connection.rollback();
+        }
 
         console.error("Booking error:", error);
 
@@ -88,6 +110,10 @@ const createBooking = async (req, res) => {
             success: false,
             message: "Server error while creating booking."
         });
+    } finally {
+        if (connection) {
+            connection.release();
+        }
     }
 };
 
