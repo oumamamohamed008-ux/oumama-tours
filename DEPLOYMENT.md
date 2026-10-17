@@ -6,7 +6,7 @@ Create the `oumama_tours` database, then import `backend/schema.sql` in phpMyAdm
 
 ## 2. Configure the backend
 
-Copy `backend/.env.example` to a private environment configuration. Set:
+Configure these variables in Hostinger's Node.js application settings (do not commit a `.env` file):
 
 - `PORT`: the port supplied by the hosting provider, when required.
 - `DB_HOST`, `DB_USER`, `DB_PASSWORD`, `DB_NAME`, `DB_PORT`: production MySQL credentials.
@@ -17,21 +17,19 @@ Never commit `backend/.env`.
 
 ## 3. Build and start
 
-From the `backend` directory:
+Configure Hostinger to run the Node.js application from the `backend` directory and use its start command:
 
 ```text
 npm ci
 npm start
 ```
 
-The Express server serves both the API and the static site. For a Hostinger static/PHP deployment, the public forms use `api/contact.php` and `api/booking.php`. Verify:
+The Express server serves both the static site in `backend/public` and its API on the same origin. The contact and booking forms send JSON to `/api/contacts` and `/api/bookings`; the legacy PHP files outside `backend/public` are not used by this deployment. Verify:
 
 ```text
 GET /api/health
 GET /index.html
 ```
-
-The PHP endpoints read the same `DB_*` environment variables. If Hostinger does not expose Node.js variables to PHP, copy `api/config.php` to a private location outside `public_html` and configure the database values there, then update the two PHP files to require that private config.
 
 `GET /api/health` must return HTTP 200 before the public forms can save data. If it returns 500, check the Hostinger MySQL values and confirm that `backend/schema.sql` was imported into the selected database.
 
