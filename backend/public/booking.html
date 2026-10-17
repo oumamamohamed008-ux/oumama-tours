@@ -230,10 +230,6 @@
 <script src="js/main.js"></script>
 
 <script>
-const API_BASE_URL = (window.location.protocol === "file:")
-  ? "http://localhost:5000"
-  : "";
-
 document.addEventListener("DOMContentLoaded", () => {
   const bookingForm = document.getElementById("booking-form");
   const confirmation = document.getElementById("booking-confirmation");
@@ -269,32 +265,55 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData(bookingForm);
     const data = Object.fromEntries(formData.entries());
 
-    data.passengers = Number(data.passengers);
-    data.return_trip = data.return_trip === "true";
-
     try {
-      const response = await fetch(`${API_BASE_URL}/api/booking.php`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-
-      const responseText = await response.text();
-      let result;
-
-      try {
-        result = JSON.parse(responseText);
-      } catch {
-        throw new Error(
-          "Le serveur PHP ne répond pas. Vérifiez la configuration Hostinger."
-        );
+      for (const key of Object.keys(data)) {
+        data[key] = data[key].trim();
       }
 
-      if (!response.ok) {
-        const serverMessage = result && result.message ? result.message : "";
+      const requiredFields = [
+        "full_name",
+        "email",
+        "phone",
+        "pickup_location",
+        "destination",
+        "travel_date",
+        "pickup_time",
+        "passengers",
+        "vehicle_type"
+      ];
+      if (requiredFields.some((field) => !data[field])) {
+        throw new Error("Veuillez remplir tous les champs requis avant de soumettre votre demande.");
+      }
+
+      data.passengers = Number(data.passengers);
+      if (!Number.isInteger(data.passengers) || data.passengers < 1) {
+        throw new Error("Veuillez indiquer un nombre de passagers valide.");
+      }
+      data.return_trip = data.return_trip === "true";
+
+      let response;
+      try {
+        response = await fetch("/api/bookings", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+      } catch {
+        throw new Error("Impossible de joindre l’API. Vérifiez votre connexion et réessayez.");
+      }
+
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        throw new Error("Réponse invalide de l’API. Veuillez réessayer plus tard.");
+      }
+
+      if (!response.ok || !result || result.success !== true) {
+        const serverMessage = result && typeof result.message === "string" ? result.message : "";
         const message = serverMessage.includes("required fields")
           ? "Veuillez remplir tous les champs requis avant de soumettre votre demande."
           : serverMessage.includes("Server error") || serverMessage.includes("server")
@@ -316,6 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       console.error("Booking error:", error);
       setBookingError(error.message || "Votre demande de réservation n’a pas pu être envoyée. Veuillez réessayer.");
+    } finally {
       submitButton.disabled = false;
       submitButton.textContent = originalText;
     }

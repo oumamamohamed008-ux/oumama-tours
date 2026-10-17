@@ -519,6 +519,7 @@
       <!-- ERROR MESSAGE -->
       <div
         id="contact-error"
+        aria-live="polite"
         class="hidden bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm"
       ></div>
 
@@ -879,10 +880,6 @@
 <!-- ========================================================= -->
 
 <script>
-const API_BASE_URL = (window.location.protocol === "file:")
-  ? "http://localhost:5000"
-  : "";
-
 document.addEventListener("DOMContentLoaded", () => {
 
   /*
@@ -937,197 +934,74 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   contactForm.addEventListener("submit", async (event) => {
-
     event.preventDefault();
-
-
-    /*
-     * Hide previous error
-     */
-
     errorBox.classList.add("hidden");
     errorBox.textContent = "";
 
-
-    /*
-     * Save original button text
-     */
-
-    const originalButtonText =
-      submitButton.textContent;
-
-
-    /*
-     * Disable button
-     */
-
+    const originalButtonText = submitButton.textContent;
     submitButton.disabled = true;
-
-    submitButton.textContent =
-      "Sending...";
-
-
-    /*
-     * Get form data
-     */
-
-    const formData =
-      new FormData(contactForm);
-
-
-    /*
-     * Convert FormData to object
-     */
-
-    const data =
-      Object.fromEntries(
-        formData.entries()
-      );
-
-
-    console.log(
-      "Sending contact message:",
-      data
-    );
-
+    submitButton.textContent = "Sending...";
 
     try {
-
-      /*
-      * Send data to the PHP endpoint
-       */
-
-      const response =
-        await fetch(
-          `${API_BASE_URL}/api/contact.php`,
-          {
-            method: "POST",
-
-            headers: {
-              "Content-Type": "application/json",
-              "Accept": "application/json"
-            },
-
-            body: JSON.stringify(data)
-          }
-        );
-
-
-      /*
-       * Get server response
-       */
-
-      const responseText = await response.text();
-      let result;
-
-      try {
-        result = JSON.parse(responseText);
-      } catch {
-        throw new Error(
-          "Le serveur PHP ne répond pas. Vérifiez la configuration Hostinger."
-        );
+      const data = Object.fromEntries(new FormData(contactForm).entries());
+      for (const key of Object.keys(data)) {
+        data[key] = data[key].trim();
       }
 
+      if (!data.name || !data.email || !data.message) {
+        throw new Error("Veuillez remplir tous les champs obligatoires.");
+      }
 
-      console.log(
-        "Server response:",
-        result
-      );
+      let response;
+      try {
+        response = await fetch("/api/contacts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+      } catch {
+        throw new Error("Impossible de joindre l’API. Vérifiez votre connexion et réessayez.");
+      }
 
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        throw new Error("Réponse invalide de l’API. Veuillez réessayer plus tard.");
+      }
 
-      /*
-       * Check response
-       */
-
-      if (!response.ok) {
-
+      if (!response.ok || !result || result.success !== true) {
         throw new Error(
           formatContactError(
             result && result.message
               ? result.message
-              : "Unable to send your message."
+              : "Votre message n’a pas pu être envoyé. Veuillez réessayer."
           )
         );
-
       }
 
-
-      /*
-       * Hide form
-       */
-
-      contactForm.classList.add(
-        "hidden"
-      );
-
-
-      /*
-       * Show confirmation
-       */
-
-      confirmation.classList.remove(
-        "hidden"
-      );
-
-
-      /*
-       * Reset form
-       */
-
+      contactForm.classList.add("hidden");
+      confirmation.classList.remove("hidden");
       contactForm.reset();
-
-
-      /*
-       * Refresh Lucide icons
-       */
 
       if (window.lucide) {
         lucide.createIcons();
       }
 
-
     } catch (error) {
-
-      console.error(
-        "Contact error:",
-        error
+      errorBox.textContent = formatContactError(
+        error.message || "Votre message n’a pas pu être envoyé. Veuillez réessayer."
       );
-
-
-      /*
-       * Show error
-       */
-
-      errorBox.textContent =
-        formatContactError(
-          error.message ||
-          "Sorry, your message could not be sent. Please try again."
-        );
-
-      errorBox.classList.remove(
-        "hidden"
-      );
-
-      errorBox.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-      });
-
+      errorBox.classList.remove("hidden");
+      errorBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
     } finally {
-
-      /*
-       * Enable button again
-       */
-
-      submitButton.disabled =
-        false;
-
-      submitButton.textContent =
-        originalButtonText;
-
+      submitButton.disabled = false;
+      submitButton.textContent = originalButtonText;
     }
-
   });
 
 
@@ -1136,11 +1010,9 @@ document.addEventListener("DOMContentLoaded", () => {
    */
 
   if (sendAnotherButton) {
-
     sendAnotherButton.addEventListener(
       "click",
       () => {
-
         confirmation.classList.add(
           "hidden"
         );
@@ -1157,9 +1029,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
     );
-
   }
-
 });
 
 </script>
