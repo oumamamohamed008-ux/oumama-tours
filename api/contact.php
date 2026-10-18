@@ -31,7 +31,7 @@ try {
 
     $mailSubject = 'New contact message - Oumama Tours';
     $mailBody = "Name: {$name}\nEmail: {$email}\nPhone: {$phone}\nSubject: {$subject}\n\nMessage:\n{$message}";
-    $mailHeaders = "From: Oumama Tours <contact@oumamatours.site>\r\nReply-To: {$email}\r\nContent-Type: text/plain; charset=UTF-8\r\n";
+    $mailHeaders = 'From: Oumama Tours <' . $config['smtp_user'] . ">\r\nReply-To: {$email}\r\nContent-Type: text/plain; charset=UTF-8\r\n";
     if (!mail($config['notification_email'], $mailSubject, $mailBody, $mailHeaders)) {
         error_log('Contact notification email could not be sent.');
     }

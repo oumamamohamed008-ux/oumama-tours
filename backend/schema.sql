@@ -27,3 +27,16 @@ CREATE TABLE IF NOT EXISTS bookings (
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS notification_outbox (
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    event_type ENUM('contact', 'booking') NOT NULL,
+    record_id INT UNSIGNED NOT NULL,
+    attempts INT UNSIGNED NOT NULL DEFAULT 0,
+    available_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    locked_until DATETIME NULL,
+    sent_at DATETIME NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    KEY idx_notification_outbox_due (sent_at, available_at, locked_until)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -44,7 +44,7 @@ try {
 
     $mailSubject = 'New booking request - Oumama Tours';
     $mailBody = "Name: {$input['full_name']}\nEmail: {$input['email']}\nPhone: {$input['phone']}\nPickup: {$input['pickup_location']}\nDestination: {$input['destination']}\nDate: {$input['travel_date']}\nTime: {$input['pickup_time']}\nPassengers: {$input['passengers']}\nVehicle: {$input['vehicle_type']}\nReturn trip: " . (!empty($input['return_trip']) ? 'Yes' : 'No') . "\nFlight: " . ($input['flight_number'] ?? '') . "\nHotel: " . ($input['hotel'] ?? '') . "\n\nAdditional requests:\n" . ($input['additional_requests'] ?? '');
-    $mailHeaders = "From: Oumama Tours <contact@oumamatours.site>\r\nReply-To: " . filter_var($input['email'], FILTER_SANITIZE_EMAIL) . "\r\nContent-Type: text/plain; charset=UTF-8\r\n";
+    $mailHeaders = 'From: Oumama Tours <' . $config['smtp_user'] . ">\r\nReply-To: " . filter_var($input['email'], FILTER_SANITIZE_EMAIL) . "\r\nContent-Type: text/plain; charset=UTF-8\r\n";
     if (!mail($config['notification_email'], $mailSubject, $mailBody, $mailHeaders)) {
         error_log('Booking notification email could not be sent.');
     }
