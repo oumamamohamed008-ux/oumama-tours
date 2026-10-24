@@ -33,7 +33,11 @@ The Express server serves both the static site in `backend/public` and its API o
 ```text
 GET /api/health
 GET /index.html
+GET /sitemap.xml
+GET /robots.txt
 ```
+
+The sitemap and robots file are served from `backend/public` alongside the site. After deploying changes to that directory, verify that `/sitemap.xml` returns HTTP 200 with an XML content type and contains only the canonical homepage, booking, and contact URLs. Confirm `/robots.txt` references `https://oumamatours.site/sitemap.xml`.
 
 `GET /api/health` must return HTTP 200 before the public forms can save data. If it returns 500, check the Hostinger MySQL values and confirm that `backend/schema.sql` was imported into the selected database.
 
