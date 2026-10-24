@@ -39,6 +39,8 @@ GET /robots.txt
 
 The sitemap and robots file are served from `backend/public` alongside the site. After deploying changes to that directory, verify that `/sitemap.xml` returns HTTP 200 with an XML content type and contains only the canonical homepage, booking, and contact URLs. Confirm `/robots.txt` references `https://oumamatours.site/sitemap.xml`.
 
+The Express app permanently redirects `www.oumamatours.site` to `oumamatours.site` while preserving the request path and query string. After deploying backend changes, verify that `https://www.oumamatours.site/` returns HTTP 308 with a `Location` pointing to `https://oumamatours.site/`; the canonical host should return HTTP 200.
+
 `GET /api/health` must return HTTP 200 before the public forms can save data. If it returns 500, check the Hostinger MySQL values and confirm that `backend/schema.sql` was imported into the selected database.
 
 Each form submission and its notification queue item are saved in one MySQL transaction. The Express process retries queued messages indefinitely with increasing delays (up to six hours between attempts) after SMTP errors; queued items survive process restarts. Delivery is at-least-once, so a restart during SMTP acknowledgement may result in a duplicate notification. The queue stores only the related contact or booking ID, not another copy of the form data. Check Hostinger's Node.js logs for sanitized notification error codes; SMTP secrets and error messages are not logged.

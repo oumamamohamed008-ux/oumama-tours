@@ -7,6 +7,7 @@ require("dotenv").config();
 const db = require("./config/database");
 const bookingRoutes = require("./routes/bookingRoutes");
 const contactRoutes = require("./routes/contactRoutes");
+const redirectCanonicalHost = require("./middleware/canonicalHost");
 const { createNotificationService } = require("./services/notificationService");
 const app = express();
 const notificationService = createNotificationService({ db });
@@ -16,6 +17,7 @@ const allowedOrigins = (process.env.ALLOWED_ORIGINS || "")
     .map((origin) => origin.trim())
     .filter(Boolean);
 
+app.use(redirectCanonicalHost);
 app.use(cors({
     origin: allowedOrigins.length ? allowedOrigins : false
 }));
